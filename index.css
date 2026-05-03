@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+header {
+  & {
+    height: clamp(
+      700px,
+      calc(812px + (700 - 812) * ((110vw - 375px) / (1366 - 375))),
+      812px
+    );
+    position: relative;
+    background-color: #e9ded4;
+    background-image: url("./static/images/texture.png");
+    background-blend-mode: color-burn;
+  }
+
+}
