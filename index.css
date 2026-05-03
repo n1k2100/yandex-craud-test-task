@@ -1,3 +1,8 @@
+@font-face {
+  src: url("./fonts/Golos.ttf") format("truetype");
+  font-family: "Golos";
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,4 +22,60 @@ header {
     background-blend-mode: color-burn;
   }
 
+  & > .logo {
+    gap: 2px;
+    top: clamp(
+      18px,
+      calc(18px + (26 - 18) * ((100vw - 375px) / (1366 - 375))),
+      26px
+    );
+    left: clamp(
+      20px,
+      calc(20px + (72 - 20) * ((100vw - 375px) / (1366 - 375))),
+      72px
+    );
+    display: flex;
+    position: absolute;
+    align-items: center;
+
+    @media (min-width: 1366px) {
+      top: 26px;
+      left: clamp(
+        72px,
+        calc(72px + (349 - 72) * ((100vw - 1366px) / (1920 - 1366))),
+        349px
+      );
+    }
+
+    & > img {
+      width: clamp(
+        18.75px,
+        calc(18.75px + (21.65 - 18.75) * ((100vw - 375px) / (1366 - 375))),
+        21.65px
+      );
+      height: clamp(
+        27px,
+        calc(27px + (31.18 - 27) * ((100vw - 375px) / (1366 - 375))),
+        31.18px
+      );
+    }
+
+    /* 14.42 - 16.65  */
+    & > p {
+      color: #595653;
+      font-weight: 700;
+      font-size: clamp(
+        14.42px,
+        calc(14.42px + (16.65 - 14.42) * ((100vw - 375px) / (1366 - 375))),
+        16.65px
+      );
+      line-height: 108%;
+      font-family: "Golos", sans-serif;
+      margin-left: 4px;
+      text-transform: uppercase;
+      font-feature-settings:
+        "pnum" on,
+        "lnum" on;
+    }
+  }
 }
