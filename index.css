@@ -201,6 +201,35 @@ header {
   }
 }
 
+.decor-item.pawn {
+  & {
+    z-index: 1;
+    width: 82.61px;
+    height: 122.22px;
+    bottom: 0;
+    left: clamp(
+      1238.83px,
+      calc(1238.83px + (1516.83 - 1238.83) * ((100vw - 1366px) / (1920 - 1366))),
+      1516.83px
+    );
+    bottom: 19.58px;
+    aspect-ratio: 82.61 / 122.22;
+    background-size: 100% 100%;
+    background-image: url("./static/images/pawn.png");
+  }
+
+  @media (max-width: 1365px) {
+    & {
+      display: none;
+    }
+  }
+  @media (min-width: 1921px) {
+    & {
+      left: calc(50% - (1920px / 2 - 1516.83px));
+    }
+  }
+}
+
 .content {
   color: #313131;
   max-width: clamp(
