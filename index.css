@@ -1,18 +1,18 @@
 @font-face {
-  src: url("./static/fonts/Golos.ttf") format("truetype");
   font-family: "Golos";
+  src: url("./static/fonts/Golos.ttf") format("truetype");
 }
 
 @font-face {
-  src: url("./static/fonts/Merriweather.ttf") format("truetype");
   font-family: "Merriweather";
+  src: url("./static/fonts/Merriweather.ttf") format("truetype");
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  user-select: none;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
 }
 
 html {
@@ -21,14 +21,15 @@ html {
 
 header {
   & {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-flow: column;
     height: clamp(
       700px,
       calc(774px + (700 - 774) * ((110vw - 375px) / (1366 - 375))),
       774px
     );
-    display: flex;
-    position: relative;
-    flex-flow: column;
     padding-top: clamp(
       18px,
       calc(18px + (26 - 18) * ((100vw - 375px) / (1366 - 375))),
@@ -42,13 +43,12 @@ header {
     background-color: #e9ded4;
     background-image: url("./static/images/texture.png");
     background-blend-mode: color-burn;
-    z-index: 1;
   }
 
   & .logo {
-    gap: 2px;
     z-index: 2;
     display: flex;
+    gap: 2px;
     align-items: center;
 
     @media (min-width: 1366px) {
@@ -74,55 +74,55 @@ header {
     }
 
     & > p {
-      color: #595653;
-      font-weight: 700;
+      margin-left: 4px;
+      font-family: "Golos", sans-serif;
       font-size: clamp(
         14.42px,
         calc(14.42px + (16.65 - 14.42) * ((100vw - 375px) / (1366 - 375))),
         16.65px
       );
+      font-weight: 700;
       line-height: 16px;
-      font-family: "Golos", sans-serif;
-      margin-left: 4px;
+      color: #595653;
       text-transform: uppercase;
     }
   }
 }
 
 .decor {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
   overflow: hidden;
 }
 
 .decor-item {
-  z-index: 0;
   position: absolute;
+  z-index: 0;
 }
 
 .decor-item.city {
   bottom: 0;
-  z-index: 1;
-  background-image: url("./static/images/city.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  aspect-ratio: 1623.5 / 452.5;
 
   left: clamp(
     -401.1px,
     calc(-401.1px + (-104.5 - (-401.1)) * ((100vw - 375px) / (1366 - 375))),
     -104.5px
   );
+  z-index: 1;
   width: clamp(
     885.53px,
     calc(885.53px + (1623.5 - 885.53) * ((100vw - 375px) / (1366 - 375))),
     1623.5px
   );
+  aspect-ratio: 1623.5 / 452.5;
+  background-image: url("./static/images/city.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 100%;
 
   @media (min-width: 1366px) {
     left: clamp(
@@ -138,38 +138,33 @@ header {
   }
 
   @media (min-width: 1921px) {
-    width: 1758.5px;
     left: calc(50% + 80.75px);
+    width: 1758.5px;
     transform: translateX(-50%);
   }
 }
 
 @media (min-width: 1366px) {
   .decor-item.city {
-    width: 1623.5px;
     left: clamp(
       -104.5px,
       calc(-104.5px + (162 - (-104.5)) * ((100vw - 1366px) / (1920 - 1366))),
       162px
     );
+    width: 1623.5px;
   }
 }
 
 @media (min-width: 1921px) {
   .decor-item.city {
-    width: 1623.5px;
     left: calc(50% - 798px);
+    width: 1623.5px;
     transform: none;
   }
 }
 
 .decor-item.elips {
   & {
-    width: clamp(
-      297.47px,
-      calc(297.47px + (660 - 297.47) * ((100vw - 375px) / (1366 - 375))),
-      660px
-    );
     bottom: clamp(
       66.69px,
       calc(66.69px + (84 - 66.69) * ((100vw - 375px) / (1366 - 375))),
@@ -180,21 +175,26 @@ header {
       calc(30.04px + (673 - 30.04) * ((100vw - 375px) / (1366 - 375))),
       673px
     );
+    width: clamp(
+      297.47px,
+      calc(297.47px + (660 - 297.47) * ((100vw - 375px) / (1366 - 375))),
+      660px
+    );
     aspect-ratio: 1 / 1;
-    background-size: 100% 100%;
+    background-image: url("./static/images/elips.png");
     background-repeat: no-repeat;
     background-position: bottom;
-    background-image: url("./static/images/elips.png");
+    background-size: 100% 100%;
   }
 
   @media (min-width: 1366px) {
     & {
-      width: 660px;
       left: clamp(
         673px,
         calc(673px + (951 - 673) * ((100vw - 1366px) / (1920 - 1366))),
         951px
       );
+      width: 660px;
     }
   }
 
@@ -207,10 +207,7 @@ header {
 
 .decor-item.pawn {
   & {
-    z-index: 1;
-    width: 82.61px;
-    height: 122.22px;
-    bottom: 0;
+    bottom: 19.58px;
     left: clamp(
       1238.83px,
       calc(
@@ -218,10 +215,12 @@ header {
       ),
       1516.83px
     );
-    bottom: 19.58px;
+    z-index: 1;
+    width: 82.61px;
+    height: 122.22px;
     aspect-ratio: 82.61 / 122.22;
-    background-size: 100% 100%;
     background-image: url("./static/images/pawn.png");
+    background-size: 100% 100%;
   }
 
   @media (max-width: 1365px) {
@@ -237,7 +236,6 @@ header {
 }
 
 .content {
-  color: #313131;
   max-width: clamp(
     335px,
     calc(335px + (542 - 335) * ((100vw - 375px) / (1366 - 375))),
@@ -248,23 +246,24 @@ header {
     calc(40px + (62 - 40) * ((100vw - 375px) / (1366 - 375))),
     62px
   );
+  color: #313131;
 }
 
 .title {
-  z-index: 2;
   position: relative;
+  z-index: 2;
   font-family: "Merriweather";
-  font-weight: 400;
   font-size: clamp(
     36px,
     calc(36px + (60 - 36) * ((100vw - 375px) / (1366 - 375))),
     60px
   );
-  text-transform: uppercase;
-  line-height: 1.111;
+  font-weight: 400;
   font-feature-settings:
     "pnum" on,
     "lnum" on;
+  line-height: 1.111;
+  text-transform: uppercase;
 }
 
 .title-line {
@@ -281,9 +280,9 @@ header {
 }
 
 .description {
+  position: relative;
   z-index: 2;
   width: 335px;
-  position: relative;
   margin-top: 24px;
   margin-bottom: 0;
   font-family: "Golos", sans-serif;
@@ -300,41 +299,41 @@ header {
 
 .actions {
   & {
-    width: 100%;
-    z-index: 2;
     position: relative;
-    gap: 14px;
+    z-index: 2;
     display: flex;
     flex-wrap: wrap;
+    gap: 14px;
+    width: 100%;
     margin-top: 32px;
   }
 
   @media (min-width: 1366px) {
     & {
-      gap: 16px;
       flex-wrap: nowrap;
+      gap: 16px;
     }
   }
 }
 
 .btn {
+  display: inline-flex;
+  flex: 1 1 263px;
+  align-items: center;
+  justify-content: center;
   min-width: 263px;
   height: 72px;
-  flex: 1 1 263px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   padding: 20px 0;
-  border-radius: 66px;
   font-family: "Golos", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.3;
-  cursor: pointer;
-  transition: all 0.3s ease;
   font-feature-settings:
     "pnum" on,
     "lnum" on;
+  line-height: 1.3;
+  cursor: pointer;
+  border-radius: 66px;
+  transition: all 0.3s ease;
 
   .btn-break {
     display: inline;
@@ -355,19 +354,19 @@ header {
 }
 
 .btn-support {
-  border: none;
   color: #fff;
   background-color: #1f1f1f;
+  border: none;
 }
 
 .btn-about {
   color: #1f1f1f;
-  border: 2px solid #1f1f1f;
   background-color: transparent;
+  border: 2px solid #1f1f1f;
 
   @media (max-width: 1365px) {
-    border: none;
     background-color: #fff;
+    border: none;
   }
 }
 
@@ -382,22 +381,22 @@ header {
 
 .marquee {
   & {
-    width: 100%;
-    background-color: #f54932;
-    font-size: clamp(
-      18px,
-      calc(24px + (24 - 18) * ((100vw - 375px) / (1366 - 375))),
-      24px
-    );
-    font-family: "Merriweather", sans-serif;
-    overflow: hidden;
     display: flex;
     align-items: center;
+    width: 100%;
     height: clamp(
       38px,
       calc(38px + (60 - 38) * ((100vw - 375px) / (1366 - 375))),
       60px
     );
+    overflow: hidden;
+    font-family: "Merriweather", sans-serif;
+    font-size: clamp(
+      18px,
+      calc(24px + (24 - 18) * ((100vw - 375px) / (1366 - 375))),
+      24px
+    );
+    background-color: #f54932;
   }
 
   & .marquee__inner {
@@ -410,31 +409,31 @@ header {
   & .marquee__content {
     & {
       display: flex;
+      flex-shrink: 0;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
       padding-right: 0;
-      color: #ffffff;
-      text-transform: uppercase;
-      font-weight: 400;
+      padding-left: 10px;
       font-size: clamp(
         16px,
         calc(16px + (22 - 16) * ((100vw - 375px) / (1366 - 375))),
         22px
       );
+      font-weight: 400;
       line-height: 1.1;
-      padding-left: 10px;
+      color: #ffffff;
+      text-transform: uppercase;
     }
 
     & .marquee__dot {
       display: inline-block;
+      flex-shrink: 0;
       width: 6px;
       height: 6px;
-      opacity: 1;
       margin: 0 12px;
-      flex-shrink: 0;
-      border-radius: 50%;
       background-color: #ffffff;
+      border-radius: 50%;
+      opacity: 1;
     }
   }
 }
@@ -451,8 +450,8 @@ main {
 
   @media (min-width: 1366px) {
     & {
-      padding: 0 72px;
       max-width: 1366px;
+      padding: 0 72px;
     }
   }
 }
@@ -469,22 +468,22 @@ main {
 }
 
 .info__title {
-  color: #313131;
   width: 317px;
   font-family: "Merriweather", serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  line-height: 1.357;
   font-size: clamp(
     28px,
     calc(28px + (36 - 28) * ((100vw - 375px) / (1366 - 375))),
     36px
   );
+  font-weight: 400;
+  line-height: 1.357;
+  color: #313131;
+  text-transform: uppercase;
 }
 
 .text-red {
-  color: #f54932;
   font-weight: 700;
+  color: #f54932;
 }
 
 .info__image-wrap {
@@ -494,9 +493,9 @@ main {
 }
 
 .info__img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .info__img--round {
@@ -505,14 +504,13 @@ main {
 
 @media (min-width: 1366px) {
   .info__promo {
-    grid-template-columns: 1fr 394px;
-    column-gap: 64px;
-    row-gap: 0;
-    align-items: center;
-
     grid-template-areas:
       "text-top image"
       "text-bottom image";
+    grid-template-columns: 1fr 394px;
+    row-gap: 0;
+    column-gap: 64px;
+    align-items: center;
   }
 
   .info__title--top {
@@ -536,11 +534,11 @@ main {
 
 .info__session {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-areas:
     "image"
     "title"
     "data";
+  grid-template-columns: 1fr;
   gap: 24px;
   margin-top: clamp(32px, 8vw, 64px);
 }
@@ -571,48 +569,48 @@ main {
 .info__specs-row {
   display: flex;
   flex-direction: column;
+  gap: 8px;
   padding: 16px 0;
   border-bottom: 1px solid #d0d0d0;
-  gap: 8px;
 }
 
 .info__specs-row dt {
-  opacity: 0.7;
   font-family: "Golos", sans-serif;
   font-size: 20px;
+  opacity: 0.7;
 }
 
 .info__specs-row dd {
-  font-weight: 600;
+  margin-left: 0;
   font-family: "Golos", sans-serif;
   font-size: 20px;
-  margin-left: 0;
+  font-weight: 600;
 }
 
 .old-price {
-  text-decoration: line-through;
-  color: #f54932;
   margin-right: 10px;
+  color: #f54932;
+  text-decoration: line-through;
 }
 
 .info__link {
   display: block;
-  color: #3057a2;
   font-family: "Golos", sans-serif;
   font-size: 18px;
+  color: #3057a2;
   text-decoration: none;
 }
 
 @media (min-width: 1366px) {
   .info__session {
     display: grid;
-    grid-template-columns: 474px 704px;
-    grid-template-rows: auto auto;
     grid-template-areas:
       "image title"
       "image data";
-    column-gap: 64px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 474px 704px;
     row-gap: 44px;
+    column-gap: 64px;
     align-items: start;
     justify-content: start;
   }
@@ -636,11 +634,11 @@ main {
   }
 
   .info__specs-row dt {
+    box-sizing: border-box;
     flex: 0 0 306px;
-    border-right: 1px solid #d0d0d0;
     padding-right: 16px;
     margin-right: 16px;
-    box-sizing: border-box;
+    border-right: 1px solid #d0d0d0;
   }
 
   .info__specs-row dd {
