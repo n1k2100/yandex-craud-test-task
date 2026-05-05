@@ -276,6 +276,7 @@ header {
 
 .description {
   z-index: 2;
+  width: 335px;
   position: relative;
   margin-top: 24px;
   margin-bottom: 0;
@@ -286,6 +287,7 @@ header {
   text-align: left;
 
   @media (min-width: 1366px) {
+    width: 542px;
     text-align: center;
   }
 }
