@@ -538,8 +538,8 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "title"
     "image"
+    "title"
     "data";
   gap: 24px;
   margin-top: clamp(32px, 8vw, 64px);
@@ -551,9 +551,10 @@ main {
 }
 
 .info__image-wrap--bender {
+  position: relative;
   grid-area: image;
   width: 100%;
-  max-width: 375px;
+  max-width: 474px;
   margin: 0 auto;
 }
 
@@ -561,7 +562,6 @@ main {
   grid-area: data;
 }
 
-/* --- ТАБЛИЦА (DL) --- */
 .info__specs {
   display: flex;
   flex-direction: column;
@@ -632,12 +632,12 @@ main {
     flex-direction: row;
     width: 100%;
     padding: 16px 0;
-    border-bottom: 1px solid #D0D0D0;
+    border-bottom: 1px solid #d0d0d0;
   }
 
   .info__specs-row dt {
     flex: 0 0 306px;
-    border-right: 1px solid #D0D0D0;
+    border-right: 1px solid #d0d0d0;
     padding-right: 16px;
     margin-right: 16px;
     box-sizing: border-box;
@@ -647,5 +647,12 @@ main {
     flex: 1;
     padding-left: 0;
     margin: 0;
+  }
+
+  .info__img--bender {
+    position: absolute;
+    top: -20px;
+    width: 474px;
+    height: 528px;
   }
 }
