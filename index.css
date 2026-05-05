@@ -19,13 +19,17 @@ header {
   & {
     height: clamp(
       700px,
-      calc(812px + (700 - 812) * ((110vw - 375px) / (1366 - 375))),
-      812px
+      calc(774px + (700 - 774) * ((110vw - 375px) / (1366 - 375))),
+      774px
     );
     display: flex;
     position: relative;
     flex-flow: column;
-    padding-top: 26px;
+    padding-top: clamp(
+      18px,
+      calc(18px + (26 - 18) * ((100vw - 375px) / (1366 - 375))),
+      26px
+    );
     padding-left: clamp(
       20px,
       calc(20px + (72 - 20) * ((100vw - 375px) / (1366 - 375))),
@@ -221,8 +225,11 @@ header {
     calc(36px + (60 - 36) * ((100vw - 375px) / (1366 - 375))),
     60px
   );
-  line-height: 40px;
   text-transform: uppercase;
+  line-height: 1.111;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
 }
 
 .title-line {
@@ -255,26 +262,32 @@ header {
 }
 
 .actions {
-  z-index: 2;
-  position: relative;
-  gap: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 32px;
+  & {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    gap: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  @media (min-width: 1366px) {
+    & {
+      gap: 16px;
+      flex-wrap: nowrap;
+    }
+  }
 }
 
 .btn {
+  min-width: 263px;
+  height: 72px;
+  flex: 1 1 263px;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
-  width: clamp(
-    263px,
-    calc(335px + (263 - 335) * ((100vw - 375px) / (1633 - 375))),
-    335px
-  );
-  padding: 16px;
+  align-items: center;
+  padding: 20px 0;
   border-radius: 66px;
   font-family: "Golos", sans-serif;
   font-size: 16px;
@@ -282,23 +295,31 @@ header {
   line-height: 1.3;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
 
   .btn-break {
-    display: none;
+    display: inline;
   }
 
-  @media (min-width: 1242px) {
-    flex: 1 1 263px;
-    width: 100%;
+  @media (max-width: 1365px) {
+    & {
+      flex: none;
+      width: 100%;
+      height: 47px;
+      padding: 18px 0;
+    }
+
     .btn-break {
-      display: inline;
+      display: none;
     }
   }
 }
 
 .btn-support {
+  border: none;
   color: #fff;
-  border: 2px solid transparent;
   background-color: #1f1f1f;
 }
 
@@ -307,7 +328,7 @@ header {
   border: 2px solid #1f1f1f;
   background-color: transparent;
 
-  @media (max-width: 1242px) {
+  @media (max-width: 1365px) {
     border: none;
     background-color: #fff;
   }
