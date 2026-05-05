@@ -209,7 +209,9 @@ header {
     bottom: 0;
     left: clamp(
       1238.83px,
-      calc(1238.83px + (1516.83 - 1238.83) * ((100vw - 1366px) / (1920 - 1366))),
+      calc(
+        1238.83px + (1516.83 - 1238.83) * ((100vw - 1366px) / (1920 - 1366))
+      ),
       1516.83px
     );
     bottom: 19.58px;
@@ -372,4 +374,63 @@ header {
 .btn-about:hover {
   color: #ffffff;
   background-color: #1f1f1f;
+}
+
+.marquee {
+  & {
+    width: 100%;
+    background-color: #f54932;
+    font-size: clamp(
+      18px,
+      calc(24px + (24 - 18) * ((100vw - 375px) / (1366 - 375))),
+      24px
+    );
+    font-family: "Merriweather", sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: clamp(
+      38px,
+      calc(38px + (60 - 38) * ((100vw - 375px) / (1366 - 375))),
+      60px
+    );
+  }
+
+  & .marquee__inner {
+    & {
+      display: flex;
+      width: max-content;
+    }
+  }
+
+  & .marquee__content {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding-right: 0;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: clamp(
+        16px,
+        calc(16px + (22 - 16) * ((100vw - 375px) / (1366 - 375))),
+        22px
+      );
+      line-height: 1.1;
+      padding-left: 10px;
+    }
+
+    & .marquee__dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      opacity: 1;
+      margin: 0 12px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+  }
 }
