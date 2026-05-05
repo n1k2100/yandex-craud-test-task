@@ -1,0 +1,9 @@
+{
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+}
