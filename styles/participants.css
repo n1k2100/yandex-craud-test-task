@@ -2,6 +2,7 @@
   margin-top: clamp(64px, 10vw, 120px);
   margin-bottom: clamp(64px, 10vw, 100px);
   position: relative;
+  margin-bottom: clamp(100px, calc(100px + (140 - 100) * ((100vw - 375px) / (1366 - 375))), 140px);
 }
 
 .participants__header {
