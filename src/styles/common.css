@@ -1,11 +1,11 @@
 .btn-arrow {
+  position: relative;
   width: 36px;
   height: 36px;
-  background-color: #313131;
-  border-radius: 50%;
-  border: none;
   cursor: pointer;
-  position: relative;
+  background-color: #313131;
+  border: none;
+  border-radius: 50%;
   transition: all 0.3s ease;
 }
 
@@ -18,20 +18,20 @@
 }
 
 .btn-arrow:disabled {
-  background-color: rgba(49, 49, 49, 0.2);
-  cursor: default;
   pointer-events: none;
+  cursor: default;
+  background-color: rgba(49, 49, 49, 0.2);
 }
 
 .btn-arrow::before {
-  content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
   top: 50%;
   left: 50%;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
 }
 
 .btn-arrow--prev::before {
@@ -40,24 +40,4 @@
 
 .btn-arrow--next::before {
   transform: translate(-70%, -50%) rotate(45deg);
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background-color: #e9ded4;
-}
-
-footer p {
-  opacity: 0.6;
-  font-size: 16px;
-  font-family: "Golos", sans-serif;
-  color: #313131;
-  width: clamp(335px, calc(335px + (1222 - 335) * ((100vw - 375px) / (1366 - 375))), 1222px);
-  height: 114px;
-  margin-top: 40px;
-  margin-bottom: clamp(60px, calc(60px + (72 - 60) * ((100vw - 375px) / (1366 - 375))), 72px);
-  line-height: 1.2;
 }

@@ -1,0 +1,115 @@
+.decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.decor-item {
+  position: absolute;
+  z-index: 0;
+}
+
+.decor-item.city {
+  bottom: 0;
+
+  left: clamp(
+    -401.1px,
+    calc(-401.1px + (-104.5 - (-401.1)) * ((100vw - 375px) / (1366 - 375))),
+    -104.5px
+  );
+  z-index: 1;
+  width: clamp(
+    885.53px,
+    calc(885.53px + (1623.5 - 885.53) * ((100vw - 375px) / (1366 - 375))),
+    1623.5px
+  );
+  aspect-ratio: 1623.5 / 452.5;
+  background-image: url("./images/city.webp");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 100%;
+}
+
+.decor-item.elips {
+  bottom: clamp(
+    66.69px,
+    calc(66.69px + (84 - 66.69) * ((100vw - 375px) / (1366 - 375))),
+    84px
+  );
+  left: clamp(
+    30.04px,
+    calc(30.04px + (673 - 30.04) * ((100vw - 375px) / (1366 - 375))),
+    673px
+  );
+  width: clamp(
+    297.47px,
+    calc(297.47px + (660 - 297.47) * ((100vw - 375px) / (1366 - 375))),
+    660px
+  );
+  aspect-ratio: 1 / 1;
+  background-image: url("./images/elips.webp");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 100%;
+}
+
+.decor-item.pawn {
+  bottom: 19.58px;
+  left: clamp(
+    1238.83px,
+    calc(1238.83px + (1516.83 - 1238.83) * ((100vw - 1366px) / (1920 - 1366))),
+    1516.83px
+  );
+  z-index: 1;
+  width: 82.61px;
+  height: 122.22px;
+  aspect-ratio: 82.61 / 122.22;
+  background-image: url("./images/pawn.webp");
+  background-size: 100% 100%;
+}
+
+@media (max-width: 1365px) {
+  .decor-item.pawn {
+    display: none;
+  }
+}
+
+@media (min-width: 1366px) {
+  .decor-item.elips {
+    left: clamp(
+      673px,
+      calc(673px + (951 - 673) * ((100vw - 1366px) / (1920 - 1366))),
+      951px
+    );
+    width: 660px;
+  }
+
+  .decor-item.city {
+    left: clamp(
+      -104.5px,
+      calc(-104.5px + (162 - (-104.5)) * ((100vw - 1366px) / (1920 - 1366))),
+      162px
+    );
+    width: 1623.5px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .decor-item.pawn {
+    left: calc(50% - (1920px / 2 - 1516.83px));
+  }
+
+  .decor-item.elips {
+    left: 50%;
+  }
+
+  .decor-item.city {
+    left: calc(50% - 798px);
+    width: 1623.5px;
+    transform: none;
+  }
+}
