@@ -1,0 +1,64 @@
+.content {
+  max-width: clamp(
+    335px,
+    calc(335px + (542 - 335) * ((100vw - 375px) / (1366 - 375))),
+    542px
+  );
+  margin-top: clamp(
+    40px,
+    calc(40px + (62 - 40) * ((100vw - 375px) / (1366 - 375))),
+    62px
+  );
+  color: #313131;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  font-family: "Merriweather";
+  font-size: clamp(
+    36px,
+    calc(36px + (60 - 36) * ((100vw - 375px) / (1366 - 375))),
+    60px
+  );
+  line-height: 1.111;
+  text-transform: uppercase;
+}
+
+.title-line {
+  display: block;
+  text-align: left;
+}
+.title-line.center {
+  text-align: center;
+}
+.title-line.right {
+  text-align: right;
+}
+
+.description {
+  position: relative;
+  z-index: 2;
+  width: 335px;
+  margin-top: 24px;
+  font-family: "Golos", sans-serif;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+  margin-top: 32px;
+}
+
+@media (min-width: 1366px) {
+  .description {
+    width: 542px;
+    text-align: center;
+  }
+}

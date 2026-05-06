@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #e9ded4;
+}
+
+footer p {
+  width: clamp(
+    335px,
+    calc(335px + (1222 - 335) * ((100vw - 375px) / (1366 - 375))),
+    1222px
+  );
+  height: 114px;
+  margin-top: 40px;
+  margin-bottom: clamp(
+    60px,
+    calc(60px + (72 - 60) * ((100vw - 375px) / (1366 - 375))),
+    72px
+  );
+  font-family: "Golos", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #313131;
+  opacity: 0.6;
+}

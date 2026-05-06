@@ -1,0 +1,43 @@
+.btn-arrow {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  background-color: #313131;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.btn-arrow:hover {
+  background-color: #fbce51;
+}
+
+.btn-arrow:disabled {
+  background-color: #d6d6d6;
+}
+
+.btn-arrow:disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: rgba(49, 49, 49, 0.2);
+}
+
+.btn-arrow::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.btn-arrow--prev::before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.btn-arrow--next::before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}

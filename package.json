@@ -1,0 +1,22 @@
+{
+  "name": "test-task-yandex-web-dev",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "lint:css": "stylelint \"./src/styles/**/*.css\" --fix",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://forgejo@localhost:2222/n1k/test-task-yandex-web-dev.git"
+  },
+  "devDependencies": {
+    "stylelint": "^17.11.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
+  }
+}
