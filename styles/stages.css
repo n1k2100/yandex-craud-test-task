@@ -1,0 +1,237 @@
+@import url("./fonts.css");
+
+.stages {
+  margin-top: clamp(60px, 10vw, 120px);
+  position: relative;
+}
+
+.stages__header {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.stages__title {
+  max-width: 806px;
+  font-family: "Merriweather", serif;
+  font-size: clamp(36px, calc(36px + (54 - 36) * ((100vw - 375px) / (1366 - 375))), 54px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #313131;
+  text-transform: uppercase;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.stages__subtitle {
+  margin-top: 12px;
+  font-family: "Golos", sans-serif;
+  font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 375px) / (1366 - 375))), 20px);
+  color: #3057a2;
+}
+
+.stages__body {
+  position: relative;
+}
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ (< 1366px)
+   ========================================= */
+
+.stages__list {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.stages__list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Слайд-контейнер для мобильной версии */
+.stages__slide {
+  display: flex;
+  flex: 0 0 auto;
+  width: 335px; /* Жесткая ширина из Figma */
+  min-height: 300px; /* Высота фрейма из Figma */
+  flex-direction: column;
+  gap: 28px; /* Высчитанное расстояние между блоками внутри слайда */
+  padding: 62px 20px 20px 20px; /* Отступ сверху 62px точно по макету */
+  box-sizing: border-box;
+  scroll-snap-align: start;
+
+  /* Возвращаем ваш оригинальный бумажный фон */
+  background-color: #e9ded4;
+  background-image: url("../static/images/texture.png");
+  background-blend-mode: color-burn;
+}
+
+.stages__item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start; /* Выравниваем по верхнему краю */
+}
+
+.stages__num {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: "Golos", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  background: #fff;
+  border-radius: 50%;
+  color: #313131;
+}
+
+.stages__text {
+  font-family: "Golos", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.222;
+  color: #313131;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+/* Контролы слайдера (точки и стрелки) из Фигмы */
+.stages__controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.btn-arrow {
+  width: 36px;
+  height: 36px;
+  background-color: #313131;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.3s;
+}
+
+.btn-arrow:disabled {
+  background-color: rgba(49, 49, 49, 0.2);
+  cursor: default;
+}
+
+/* Рисуем стрелочки CSS-кодом */
+.btn-arrow::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  top: 50%;
+  left: 50%;
+}
+
+.btn-arrow--prev::before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.btn-arrow--next::before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+.stages__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #d9d9d9;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #313131;
+}
+
+/* =========================================
+   ДЕСКТОПНАЯ ВЕРСИЯ (>= 1366px)
+   ========================================= */
+
+@media (min-width: 1366px) {
+  .stages__header {
+    margin-bottom: 72px;
+  }
+
+  .stages__subtitle {
+    position: absolute;
+    bottom: 10px;
+    left: 320px;
+    max-width: 280px;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .stages__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(112px, auto); /* Точная минимальная высота из Figma */
+    gap: 20px;
+    overflow-x: visible; /* Отключаем скролл */
+    padding-bottom: 0;
+  }
+
+  /* Магия: "растворяем" мобильные слайды, чтобы flex-элементы стали напрямую детьми grid-сетки */
+  .stages__slide {
+    display: contents;
+  }
+
+  /* Переносим фон и стили карточки на сами элементы для десктопа */
+  .stages__item {
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+
+    background-color: #e9ded4;
+    background-image: url("../static/images/texture.png");
+    background-blend-mode: color-burn;
+  }
+
+  /* Умная сетка подстраивается сама благодаря этим классам */
+  .stages__item--span-row {
+    grid-row: span 2;
+  }
+
+  .stages__item--span-col {
+    grid-column: span 2;
+    position: relative;
+    padding-right: 280px; /* Отступ справа, чтобы текст не залезал под самолет */
+  }
+
+  .stages__text {
+    font-size: 20px;
+    max-width: 302px; /* Ограничение ширины текста из Figma для десктопа */
+    /* padding-top: 6px; */
+  }
+
+  .stages__item--span-col .stages__text {
+    max-width: 446px; /* В последней карточке текст шире */
+  }
+
+  .stages__controls {
+    display: none; /* Скрываем стрелки и точки на десктопе */
+  }
+
+  /* Самолет */
+  .stages__airplane {
+    position: absolute;
+    top: auto;
+    bottom: -20px;
+    right: -60px;
+    width: 440px;
+    z-index: 10;
+  }
+}
