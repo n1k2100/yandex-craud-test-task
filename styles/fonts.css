@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Golos";
+  src: url("../static/fonts/Golos.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../static/fonts/Merriweather.ttf") format("truetype");
+}

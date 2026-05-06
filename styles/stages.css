@@ -1,0 +1,245 @@
+@import url("./fonts.css");
+
+.stages {
+  margin-top: clamp(60px, 10vw, 120px);
+  position: relative;
+}
+
+.stages__header {
+  position: relative;
+  margin-bottom: 148px;
+}
+
+.stages__title {
+  max-width: 806px;
+  font-family: "Merriweather", serif;
+  font-size: clamp(
+    36px,
+    calc(36px + (54 - 36) * ((100vw - 375px) / (1366 - 375))),
+    54px
+  );
+  font-weight: 400;
+  line-height: 1.1;
+  color: #313131;
+  text-transform: uppercase;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+}
+
+.stages__subtitle {
+  margin-top: 12px;
+  font-family: "Golos", sans-serif;
+  font-size: clamp(
+    18px,
+    calc(18px + (20 - 18) * ((100vw - 375px) / (1366 - 375))),
+    20px
+  );
+  color: #3057a2;
+}
+
+.stages__list {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.stages__list::-webkit-scrollbar {
+  display: none;
+}
+
+.stages__slide {
+  display: flex;
+  flex: 0 0 335px;
+  width: 335px;
+  min-height: 300px;
+  flex-direction: column;
+  gap: 28px;
+  padding: 62px 20px 20px 20px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+
+  background-color: #e9ded4;
+  background-image: url("../static/images/texture.png");
+  background-blend-mode: color-burn;
+}
+
+.stages__item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.stages__num {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: "Golos", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  background: #fff;
+  border-radius: 50%;
+  color: #313131;
+}
+
+.stages__text {
+  font-family: "Golos", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.222;
+  color: #313131;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+}
+
+.stages__controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.btn-arrow {
+  width: 36px;
+  height: 36px;
+  background-color: #313131;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.3s;
+}
+
+.btn-arrow:disabled {
+  background-color: rgba(49, 49, 49, 0.2);
+  cursor: default;
+}
+
+.btn-arrow::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  top: 50%;
+  left: 50%;
+}
+
+.btn-arrow--prev::before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.btn-arrow--next::before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+.stages__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #d9d9d9;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #313131;
+}
+
+.stages__airplane {
+  position: absolute;
+  z-index: 2;
+}
+
+@media (max-width: 1365px) {
+  .stages__airplane {
+    top: clamp(60px, calc(196px + (60 - 196) * ((100vw - 375px) / (1365 - 375))), 196px);
+    aspect-ratio: 374.8 / 146.22;
+    width: 335px;
+    height: 182px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1366px) {
+  .stages__header {
+    margin-bottom: 64px;
+  }
+
+  .stages__subtitle {
+    position: absolute;
+    bottom: 10px;
+    left: 320px;
+    max-width: 280px;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .stages__list {
+    display: grid;
+    grid-template-columns: repeat(3, 394px);
+    grid-template-rows: 112px 112px 136px;
+    gap: 20px;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .stages__slide {
+    display: contents;
+  }
+
+  .stages__item {
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+
+    background-color: #e9ded4;
+    background-image: url("../static/images/texture.png");
+    background-blend-mode: color-burn;
+  }
+
+  .stages__item--span-row {
+    grid-row: span 2;
+  }
+
+  .stages__item--span-col {
+    grid-column: span 2;
+    position: relative;
+    padding-right: 280px;
+  }
+
+  .stages__text {
+    font-size: 20px;
+    max-width: 302px;
+  }
+
+  .stages__item--span-col .stages__text {
+    max-width: 446px;
+  }
+
+  .stages__controls {
+    display: none;
+  }
+
+  .stages__airplane {
+    position: absolute;
+    top: auto;
+    bottom: 0px;
+    right: 0px;
+    aspect-ratio: 374.8 / 146.22;
+    z-index: 2;
+  }
+}

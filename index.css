@@ -1,22 +1,20 @@
-@font-face {
-  font-family: "Golos";
-  src: url("./static/fonts/Golos.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Merriweather";
-  src: url("./static/fonts/Merriweather.ttf") format("truetype");
-}
+@import url("./styles/fonts.css");
+@import url("./styles/stages.css");
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  user-select: none;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 header {
@@ -439,12 +437,19 @@ header {
 }
 
 main {
+  position: relative;
+  z-index: 2;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
   & {
+    width: 100%;
+    max-width: 100vw;
     padding: 0 20px;
   }
 
@@ -602,13 +607,18 @@ main {
 }
 
 @media (min-width: 1366px) {
+  .info__title {
+    width: 100%;
+    max-width: 764px;
+  }
+
   .info__session {
     display: grid;
     grid-template-areas:
       "image title"
       "image data";
     grid-template-rows: auto auto;
-    grid-template-columns: 474px 704px;
+    grid-template-columns: 474px minmax(0, 1fr);
     row-gap: 44px;
     column-gap: 64px;
     align-items: start;
@@ -617,6 +627,7 @@ main {
 
   .info__data {
     grid-area: data;
+    max-width: 704px;
     width: 100%;
   }
 
@@ -647,10 +658,17 @@ main {
     margin: 0;
   }
 
+  .info__image-wrap--bender {
+    max-width: 474px;
+    width: 100%;
+    height: 528px;
+  }
+
   .info__img--bender {
     position: absolute;
     top: -20px;
-    width: 474px;
+    max-width: 474px;
+    width: 100%;
     height: 528px;
   }
 }
