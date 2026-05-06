@@ -42,7 +42,7 @@ header {
       72px
     );
     background-color: #e9ded4;
-    background-image: url("./static/images/texture.webp");
+    background-image: url("./images/texture.webp");
     background-blend-mode: color-burn;
   }
 
@@ -120,7 +120,7 @@ header {
     1623.5px
   );
   aspect-ratio: 1623.5 / 452.5;
-  background-image: url("./static/images/city.webp");
+  background-image: url("./images/city.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% 100%;
@@ -182,7 +182,7 @@ header {
       660px
     );
     aspect-ratio: 1 / 1;
-    background-image: url("./static/images/elips.webp");
+    background-image: url("./images/elips.webp");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100% 100%;
@@ -220,7 +220,7 @@ header {
     width: 82.61px;
     height: 122.22px;
     aspect-ratio: 82.61 / 122.22;
-    background-image: url("./static/images/pawn.webp");
+    background-image: url("./images/pawn.webp");
     background-size: 100% 100%;
   }
 

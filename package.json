@@ -4,7 +4,10 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "lint:css": "stylelint \"**/*.css\" --fix"
+    "lint:css": "stylelint \"**/*.css\" --fix",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -13,6 +16,7 @@
   "devDependencies": {
     "stylelint": "^17.11.0",
     "stylelint-config-recess-order": "^7.7.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
   }
 }

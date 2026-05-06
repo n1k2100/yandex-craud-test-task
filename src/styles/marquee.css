@@ -12,7 +12,7 @@
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 40s linear infinite;
 }
 
 .marquee__content {
