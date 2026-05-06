@@ -1,30 +1,30 @@
 .participants {
+  position: relative;
   margin-top: clamp(64px, 10vw, 120px);
   margin-bottom: clamp(64px, 10vw, 100px);
-  position: relative;
   margin-bottom: clamp(100px, calc(100px + (140 - 100) * ((100vw - 375px) / (1366 - 375))), 140px);
 }
 
 .participants__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: clamp(40px, 5vw, 60px);
 }
 
 .participants__title {
   font-family: "Merriweather", serif;
   font-size: clamp(36px, 4vw, 54px);
-  line-height: 1.1;
-  text-transform: uppercase;
-  color: #313131;
   font-weight: 400;
+  line-height: 1.1;
+  color: #313131;
+  text-transform: uppercase;
 }
 
 .participants__controls {
   display: flex;
-  align-items: center;
   gap: 14px;
+  align-items: center;
 }
 
 .participants__controls--mobile {
@@ -56,8 +56,8 @@
 }
 
 .participant-card {
-  flex: 0 0 calc((100% - 40px) / 3);
   display: flex;
+  flex: 0 0 calc((100% - 40px) / 3);
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -70,10 +70,10 @@
 .participant-card__avatar {
   width: clamp(244px, 20vw, 320px);
   height: clamp(244px, 20vw, 320px);
-  border-radius: 50%;
-  overflow: hidden;
   margin-bottom: 28px;
+  overflow: hidden;
   background-color: #e9ded4;
+  border-radius: 50%;
 }
 
 .participant-card__avatar img {
@@ -83,21 +83,21 @@
 }
 
 .participant-card__name {
+  margin-bottom: 6px;
   font-family: "Golos", sans-serif;
-  font-weight: 600;
   font-size: 24px;
+  font-weight: 600;
   line-height: 1.2;
   color: #313131;
-  margin-bottom: 6px;
 }
 
 .participant-card__role {
+  margin-bottom: 20px;
   font-family: "Golos", sans-serif;
   font-size: 20px;
   line-height: 1.2;
   color: #313131;
   opacity: 0.6;
-  margin-bottom: 20px;
 }
 
 .participant-card__btn {
@@ -105,19 +105,19 @@
   align-items: center;
   justify-content: center;
   padding: 12px 18px;
-  border: 1px solid #3057a2;
-  border-radius: 62px;
   font-family: "Golos", sans-serif;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   color: #3057a2;
   text-decoration: none;
+  border: 1px solid #3057a2;
+  border-radius: 62px;
   transition: all 0.3s ease;
 }
 
 .participant-card__btn:hover {
-  background-color: #3057a2;
   color: #ffffff;
+  background-color: #3057a2;
 }
 
 @media (max-width: 1365px) {
