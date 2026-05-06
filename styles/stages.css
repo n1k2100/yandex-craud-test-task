@@ -63,7 +63,7 @@
   scroll-snap-align: start;
 
   background-color: #e9ded4;
-  background-image: url("../static/images/texture.png");
+  background-image: url("../static/images/texture.webp");
   background-blend-mode: color-burn;
 }
 
@@ -176,7 +176,7 @@
     box-sizing: border-box;
 
     background-color: #e9ded4;
-    background-image: url("../static/images/texture.png");
+    background-image: url("../static/images/texture.webp");
     background-blend-mode: color-burn;
   }
 
