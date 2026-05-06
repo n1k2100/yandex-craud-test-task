@@ -2,6 +2,7 @@
 @import url("./styles/stages.css");
 @import url("./styles/participants.css");
 @import url("./styles/common.css");
+@import url("./styles/marquee.css");
 
 * {
   box-sizing: border-box;
@@ -377,65 +378,6 @@ header {
 .btn-about:hover {
   color: #ffffff;
   background-color: #1f1f1f;
-}
-
-.marquee {
-  & {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: clamp(
-      38px,
-      calc(38px + (60 - 38) * ((100vw - 375px) / (1366 - 375))),
-      60px
-    );
-    overflow: hidden;
-    font-family: "Merriweather", sans-serif;
-    font-size: clamp(
-      18px,
-      calc(24px + (24 - 18) * ((100vw - 375px) / (1366 - 375))),
-      24px
-    );
-    background-color: #f54932;
-  }
-
-  & .marquee__inner {
-    & {
-      display: flex;
-      width: max-content;
-    }
-  }
-
-  & .marquee__content {
-    & {
-      display: flex;
-      flex-shrink: 0;
-      align-items: center;
-      justify-content: center;
-      padding-right: 0;
-      padding-left: 10px;
-      font-size: clamp(
-        16px,
-        calc(16px + (22 - 16) * ((100vw - 375px) / (1366 - 375))),
-        22px
-      );
-      font-weight: 400;
-      line-height: 1.1;
-      color: #ffffff;
-      text-transform: uppercase;
-    }
-
-    & .marquee__dot {
-      display: inline-block;
-      flex-shrink: 0;
-      width: 6px;
-      height: 6px;
-      margin: 0 12px;
-      background-color: #ffffff;
-      border-radius: 50%;
-      opacity: 1;
-    }
-  }
 }
 
 main {
