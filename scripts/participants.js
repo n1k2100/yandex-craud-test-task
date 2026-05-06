@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   currentIndex = totalOriginal;
 
+  /**
+   * Функция обновления слайдов
+   */
   function updateSlider(withAnimation = true) {
     itemsPerView = window.innerWidth >= 1366 ? 3 : 1;
     const gap = 20;
@@ -58,6 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     currentCounters.forEach((el) => (el.textContent = displayValue));
   }
 
+  /**
+   * Функция автоматического смещения на 1 карточку
+   */
   function startAutoPlay() {
     stopAutoPlay();
 
@@ -66,6 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, AUTO_PLAY_DELAY);
   }
 
+  /**
+   * Функция остановки автоматического смещения
+   */
   function stopAutoPlay() {
     if (autoPlayTimeout) {
       clearTimeout(autoPlayTimeout);
@@ -73,6 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /**
+   * Функция смещения далее
+   */
   function moveNext() {
     if (isTransitioning) {
       return;
@@ -96,6 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener("transitionend", handleTransitionEnd);
   }
 
+  /**
+   * Функция отката назад
+   */
   function movePrev() {
     if (isTransitioning) {
       return;
