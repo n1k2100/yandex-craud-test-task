@@ -20,6 +20,7 @@
 .btn-arrow:disabled {
   background-color: rgba(49, 49, 49, 0.2);
   cursor: default;
+  pointer-events: none;
 }
 
 .btn-arrow::before {

@@ -1,3 +1,6 @@
+/**
+ * Функция инициализации бегущей строки
+ */
 function initMarquee() {
   const marqueeInners = document.querySelectorAll(".marquee__inner");
 
