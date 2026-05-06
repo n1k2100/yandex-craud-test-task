@@ -1,5 +1,7 @@
 @import url("./styles/fonts.css");
 @import url("./styles/stages.css");
+@import url("./styles/participants.css");
+@import url("./styles/common.css");
 
 * {
   box-sizing: border-box;
