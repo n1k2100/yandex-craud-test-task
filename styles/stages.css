@@ -107,41 +107,6 @@
   margin-top: 24px;
 }
 
-.btn-arrow {
-  width: 36px;
-  height: 36px;
-  background-color: #313131;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  transition: opacity 0.3s;
-}
-
-.btn-arrow:disabled {
-  background-color: rgba(49, 49, 49, 0.2);
-  cursor: default;
-}
-
-.btn-arrow::before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-  top: 50%;
-  left: 50%;
-}
-
-.btn-arrow--prev::before {
-  transform: translate(-30%, -50%) rotate(-135deg);
-}
-
-.btn-arrow--next::before {
-  transform: translate(-70%, -50%) rotate(45deg);
-}
-
 .stages__dots {
   display: flex;
   gap: 6px;
@@ -165,7 +130,11 @@
 
 @media (max-width: 1365px) {
   .stages__airplane {
-    top: clamp(60px, calc(196px + (60 - 196) * ((100vw - 375px) / (1365 - 375))), 196px);
+    top: clamp(
+      60px,
+      calc(196px + (60 - 196) * ((100vw - 375px) / (1365 - 375))),
+      196px
+    );
     aspect-ratio: 374.8 / 146.22;
     width: 335px;
     height: 182px;
