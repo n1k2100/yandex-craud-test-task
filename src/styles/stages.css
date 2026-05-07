@@ -61,7 +61,7 @@
   scroll-snap-align: start;
 
   background-color: #e9ded4;
-  background-image: url("./images/texture.webp");
+  background-image: url("/images/texture.webp");
   background-blend-mode: color-burn;
 }
 
@@ -174,7 +174,7 @@
     padding: 20px;
 
     background-color: #e9ded4;
-    background-image: url("./images/texture.webp");
+    background-image: url("/images/texture.webp");
     background-blend-mode: color-burn;
   }
 

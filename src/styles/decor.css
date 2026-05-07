@@ -28,7 +28,7 @@
     1623.5px
   );
   aspect-ratio: 1623.5 / 452.5;
-  background-image: url("./images/city.webp");
+  background-image: url("/images/city.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% 100%;
@@ -51,7 +51,7 @@
     660px
   );
   aspect-ratio: 1 / 1;
-  background-image: url("./images/elips.webp");
+  background-image: url("/images/elips.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% 100%;
@@ -68,7 +68,7 @@
   width: 82.61px;
   height: 122.22px;
   aspect-ratio: 82.61 / 122.22;
-  background-image: url("./images/pawn.webp");
+  background-image: url("/images/pawn.webp");
   background-size: 100% 100%;
 }
 
